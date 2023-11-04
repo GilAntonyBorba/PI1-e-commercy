@@ -9,3 +9,20 @@ body {
     margin: 0;
     padding: 0;
   }
+
+   /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-h2-inside-swiper=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+   .h2-inside-swiper{
+    /* margin-top: 1%; */
+    /* margin-bottom: 2%; */
+  }
+
+  /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-h2-centralizado=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+  .h3-centralizado{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    font-weight: 600;
+
+
+    /* background-color: aqua; */
+  }
