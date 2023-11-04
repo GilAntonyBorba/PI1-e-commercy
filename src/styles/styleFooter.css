@@ -109,7 +109,26 @@ footer img{
     border-radius: 50%;
   }
 
+
+@media (max-width: 1000px){
+    footer a{
+        color: #337ab7;
+    }
+}
+@media (max-width: 575px){
+    footer a{
+        color: #337ab7;
+    }
+}
 @media (max-width: 500px){
+    footer p{
+        font-size: 12px;
+    }
+    footer a{
+        color: #337ab7;
+    }
+}
+@media (max-width: 415px){
     footer p{
         font-size: 12px;
     }
