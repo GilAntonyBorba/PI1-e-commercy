@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="src/styles/reset.css">
     <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="src/styles/styleNav.css">
+    <link rel="stylesheet" href="src/styles/styleSwiperCarousel.css">
     <link rel="stylesheet" href="src/styles/styleSwiperBootstrap.css">
     <link rel="stylesheet" href="src/styles/styleFooter.css">
     
@@ -84,8 +85,24 @@
     </header>
     <main>
 
-      <!-- CAROUSEL BOOTSTRAP -->
       
+      <!-- CAROUSEL SWIPER -->
+      <div class="swiper mySwiperCar" id="swiperCar">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide video">
+            <video width="100%" autoplay muted loop>
+              <source src="src/video/BlackNovember.mp4" type="video/mp4">
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+          </div>
+          <div class="swiper-slide video">
+            <img src="src/imagens/Banners/BlackNovember.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
 
 
       <h3 class="h3-centralizado">
@@ -461,9 +478,12 @@
     </footer>
 
     <script src="src/scripts/CarouselSwiper.js"></script>
+    <script src="src/scripts/Swiper.js"></script>
     <script src="src/scripts/ShoppingCart.js"></script>
+
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+
+  </body>
 </html>
