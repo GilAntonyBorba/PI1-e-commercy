@@ -109,41 +109,7 @@ footer img{
     border-radius: 50%;
   }
 
-
-
-
-
-
-@media (max-width: 1000px){
-    #presentation img {
-        width: 400px; 
-        height: auto; 
-    }
-
-    #h1-presentation{
-        font-size: 40px;
-    }
-    #h2-presentation{
-        font-size: 24px;
-        font-weight: 500;
-    }
-}
-
-@media (max-width: 575px){
-    #presentation img {
-        width: 300px; 
-        height: auto; 
-    }
-
-    #h1-presentation{
-        font-size: 32px;
-    }
-    #h2-presentation{
-        font-size: 24px;
-        font-weight: 500;
-    }
-}
-@media (max-width: 415px){
+@media (max-width: 500px){
     footer p{
         font-size: 12px;
     }
