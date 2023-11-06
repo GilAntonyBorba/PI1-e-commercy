@@ -1,8 +1,77 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    function resetForm() {
+        // Limpa os campos
+        document.forms.SignUp.InputName.value = '';
+        document.forms.SignUp.InputEmail.value = '';
+        document.forms.SignUp.InputPassword.value = '';
+        document.querySelector('input[name="conheceu"]').checked = false;
+        document.querySelector('input[name="conheciaAntes"]').checked = false;
+
+        // Habilita os campos para edição
+        document.forms.SignUp.InputName.disabled = false;
+        document.forms.SignUp.InputEmail.disabled = false;
+        document.forms.SignUp.InputPassword.disabled = false;
+        document.querySelector('input[name="conheceu"]').disabled = false;
+        document.querySelector('input[name="conheciaAntes"]').disabled = false;
+
+        // Fecha o modal
+        $('#meuModal').modal('hide');
+    }
+
+    document.getElementById('btnAlterar').addEventListener('click', function() {
+        // Habilita os campos para edição
+        document.forms.SignUp.InputName.disabled = false;
+        document.forms.SignUp.InputEmail.disabled = false;
+        document.forms.SignUp.InputPassword.disabled = false;
+        document.querySelector('input[name="conheceu"]').disabled = false;
+        document.querySelector('input[name="conheciaAntes"]').disabled = false;
+
+        resetForm();
+    });
+
+    // Botão "Limpar dados"
+    document.getElementById('btnLimpar').addEventListener('click', resetForm);
+
+    // Atribuir a função validaForm ao evento onsubmit do formulário
     document.forms.SignUp.onsubmit = validaForm;
+
+    // Botão "Enviar"
+    document.getElementById('btnEnviarFormulario').addEventListener('click', function(e) {
+        if (!formValido) {
+            // Mostra a modal apenas se !formValido
+            $('#meuModal').modal('show');
+        } else {
+            // Trate o caso em que o formulário seja válido (adicione aqui o código para o envio do formulário, se necessário)
+        }
+    });
+
+     // Evento que abre a janela modal
+     $('#meuModal').on('shown.bs.modal', function () {
+        $('#meuInput').trigger('focus');
+        displayFormData();
+    });
+
+    function displayFormData() {
+        const name = document.forms.SignUp.InputName.value;
+        const email = document.forms.SignUp.InputEmail.value;
+        const password = document.forms.SignUp.InputPassword.value;
+        const conheceu = document.querySelector('input[name="conheceu"]:checked');
+        const conheciaAntes = document.querySelector('input[name="conheciaAntes"]:checked');
+
+        const modalBody = document.querySelector('.modal-body');
+        modalBody.innerHTML = `
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Senha:</strong> ${password}</p>
+            <p><strong>Por onde nos conheceu:</strong> ${conheceu ? conheceu.nextSibling.textContent : 'Não selecionado'}</p>
+            <p><strong>Já nos conhecia anteriormente:</strong> ${conheciaAntes ? conheciaAntes.nextSibling.textContent : 'Não selecionado'}</p>
+        `;
+    }
+
 });
 
 function validaForm(e){
+    e.preventDefault();
     let form = e.target;//target é o formulário que gerou essa submissão
     let formValido = true;
     console.log("início da função validaForm!");
@@ -32,16 +101,6 @@ function validaForm(e){
     else{
         form.InputName.classList.remove("inputDestacado");
     }
-
-
-    // if (form.cpf.value === "" || form.cpf.value.length != 11){
-    //     spanCpf.textContent = 'O cpf não pode ser vazio e deve conter exatamente 11 dígitos';
-    //     formValido = false;
-    //     form.cpf.classList.add("inputDestacado");
-    // }
-    // else{
-    //     form.cpf.classList.remove("inputDestacado");
-    // }
 
     // EMAIL-=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=
         if(form.InputEmail.value === ""){
@@ -122,63 +181,9 @@ function validaForm(e){
         spanRadiobox.style.display = 'none'; // Oculta a mensagem de erro
         pRadio.classList.remove("pDestacado");
     }
-
-
-
-
-
-
-    
-    
-
-    // const tipoContato = form.tipoContato;
-    // if (tipoContato.value === "") {
-    //     spanTipoContato.textContent = 'Selecione uma opção válida';
-    //     formValido = false;
-    //     tipoContato.classList.add("inputDestacado");
-    // } else {
-    //     tipoContato.classList.remove("inputDestacado");
-    // }
-
-
-    // const tipoContato = form.tipoContato;
-    // if (tipoContato.value === "") {
-    //     spanTipoContato.textContent = 'Selecione uma opção válida';
-    //     formValido = false;
-    //     tipoContato.classList.add("inputDestacado");
-    // } else {
-    //     tipoContato.classList.remove("inputDestacado");
-    // }
-
-    // $(document).ready(function () {
-      
-        //   $("option[name='option']").click(function(){ // o evento 'blur' ocorre quando o objeto perde o foco
-        //     const tipoContato = form.tipoContato;
-        //     alert('Idade invalida!');
-        //     if (tipoContato.value === "") {
-                
-        //     } else {
-        //         $("#textarea").fadeIn(1000).delay(500).fadeOut(1000);
-        //     }
-        //   });
-
-
-    //       const tipoContato = document.getElementById('tipoContato');
-    // const textarea = document.getElementById('textarea');
-
-    // tipoContato.addEventListener('change', function() {
-    //     if (tipoContato.value === "") {
-    //         alert('Selecione uma opção válida.');
-    //     } else {
-    //         textarea.style.display = 'block'; // Mostra o elemento textarea
-    //     }
-    // });
-      
-    //   });
-
-
     
     if (!formValido){
-        e.preventDefault();
+        
+        
     }
 }
