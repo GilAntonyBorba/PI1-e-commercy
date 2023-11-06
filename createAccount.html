@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JL TELHAS E FERRAGENS</title>
+    <title>JL TELHAS E FERRAGENS - Criação de conta</title>
     <link rel="icon" href="src/imagens/JLImagens/JL-Logo.jpg" type="image/jpg">
 
     <!-- Bootstrap -->
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="src/styles/styleNav.css">
     <link rel="stylesheet" href="src/styles/styleFooter.css">
+    <link rel="stylesheet" href="src/styles/styleCreateAccount.css">
     
 
 </head>
@@ -27,7 +28,7 @@
           <a class="navbar-brand order-2 mx-auto" href="index.html">
             <img src="src/imagens/JLImagens/LogoWideOriginal.jpg" class="logo" width="173" height="30" alt="LOGO - JL TELHAS E FERRAGENS">
           </a>
-          <a class="navbar-brand order-4 active" id="color-picker" aria-current="page" href="login.html">
+          <a class="navbar-brand order-4 active" id="color-picker" aria-current="page" href="createAccount.html">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon_menu-person" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -76,7 +77,67 @@
       </nav>
     </header>
     <main>
+      <form id="form-login">
+        <h2>Crie uma conta</h2>
+        <div class="form-group">
+          <label for="InputName">Nome</label>
+          <input type="text" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Seu Nome">
+          <span></span>
+        </div>
+        <div class="form-group">
+          <label for="InputEmail1">Endereço de email</label>
+          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+          <span></span>
+        </div>
+        <div class="form-group">
+          <label for="InputPassword1">Senha</label>
+          <input type="password" class="form-control" id="InputPassword1" placeholder="Senha">
+          <span></span>
+        </div>
         
+        
+        <div>
+          <p></p>
+          <label>Ajude-nos respondendo algumas perguntas básicas</label>
+          <fieldset class="fieldset-form-group">
+            <div class="form-group">
+              <p class="created-legend">Já nos conhecia anteriormente?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="sim" name="aluno" value="sim">
+                    <label class="form-check-label" for="sim">Sim</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="nao" name="aluno" value="nao">
+                    <label class="form-check-label" for="nao">Não</label>
+                </div>
+            </div>
+            <div class="div-divider">
+              <hr>
+            </div>
+            <div class="form-group">
+              <p>Por onde nos conheceu?</p>
+              <div class="form-check">
+                <input class="form-check-input"  type="checkbox" id="futebol" name="esportes" value="futebol" class="">
+                <label class="form-check-label" for="futebol">Redes Sociais</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input"  type="checkbox" id="basquete" name="esportes" value="basquete" class="">
+                  <label class="form-check-label" for="basquete">Loja Presencial</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input"  type="checkbox" id="natacao" name="esportes" value="natacao" class="">
+                  <label class="form-check-label" for="natacao">Por este Website</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input"  type="checkbox" id="volleyball" name="esportes" value="volleyball" class="">
+                  <label class="form-check-label" for="volleyball">Outros</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
     </main>
     <footer>
       <img src="src/imagens/JLImagens/LogoWideOriginal.jpg"  alt="LOGO - JL TELHAS E FERRAGENS">
