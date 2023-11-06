@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="src/styles/styleNav.css">
     <link rel="stylesheet" href="src/styles/styleFooter.css">
     <link rel="stylesheet" href="src/styles/styleCreateAccount.css">
+
+    <!-- Scripts -->
+    <script src="src/scripts/validaForm.js"></script>
     
 
 </head>
@@ -77,37 +80,36 @@
       </nav>
     </header>
     <main>
-      <form id="form-login">
+      <form name="SignUp" action="index.html" method="get" id="form-create-account">
         <h2>Crie uma conta</h2>
         <div class="form-group">
           <label for="InputName">Nome</label>
           <input type="text" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Seu Nome">
-          <span></span>
+          <span class="span_SignUp"></span>
         </div>
         <div class="form-group">
-          <label for="InputEmail1">Endereço de email</label>
-          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-          <span></span>
+          <label for="InputEmail">Endereço de email</label>
+          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Seu email">
+          <span class="span_SignUp"></span>
         </div>
         <div class="form-group">
-          <label for="InputPassword1">Senha</label>
-          <input type="password" class="form-control" id="InputPassword1" placeholder="Senha">
-          <span></span>
+          <label for="InputPassword">Senha</label>
+          <input type="password" class="form-control" id="InputPassword" placeholder="Senha">
+          <span class="span_SignUp"></span>
         </div>
-        
         
         <div>
           <p></p>
           <label>Ajude-nos respondendo algumas perguntas básicas</label>
           <fieldset class="fieldset-form-group">
-            <div class="form-group">
-              <p class="created-legend">Já nos conhecia anteriormente?</p>
+            <div class="form-group" id="radioOptions">
+              <p id="pRadio" class="created-legend">Já nos conhecia anteriormente?</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" id="sim" name="aluno" value="sim">
+                    <input class="form-check-input" type="radio" id="sim" name="conheciaAntes" value="sim">
                     <label class="form-check-label" for="sim">Sim</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" id="nao" name="aluno" value="nao">
+                    <input class="form-check-input" type="radio" id="nao" name="conheciaAntes" value="nao">
                     <label class="form-check-label" for="nao">Não</label>
                 </div>
             </div>
@@ -115,28 +117,32 @@
               <hr>
             </div>
             <div class="form-group">
-              <p>Por onde nos conheceu?</p>
+              <p id="pCheck" class="">Por onde nos conheceu?</p>
               <div class="form-check">
-                <input class="form-check-input"  type="checkbox" id="futebol" name="esportes" value="futebol" class="">
-                <label class="form-check-label" for="futebol">Redes Sociais</label>
+                <input class="form-check-input"  type="checkbox" id="redessociais" name="conheceu" value="redessociais">
+                <label class="form-check-label" for="redessociais">Redes Sociais</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="basquete" name="esportes" value="basquete" class="">
-                  <label class="form-check-label" for="basquete">Loja Presencial</label>
+                  <input class="form-check-input"  type="checkbox" id="loja" name="conheceu" value="loja">
+                  <label class="form-check-label" for="loja">Loja Presencial</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="natacao" name="esportes" value="natacao" class="">
-                  <label class="form-check-label" for="natacao">Por este Website</label>
+                  <input class="form-check-input"  type="checkbox" id="website" name="conheceu" value="website">
+                  <label class="form-check-label" for="website">Por este Website</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="volleyball" name="esportes" value="volleyball" class="">
-                  <label class="form-check-label" for="volleyball">Outros</label>
+                  <input class="form-check-input"  type="checkbox" id="outros" name="conheceu" value="outros">
+                  <label class="form-check-label" for="outros">Outros</label>
               </div>
             </div>
           </fieldset>
         </div>
+        <span id="RadioError" class="span_SignUp"></span>
+        <span id="checkboxError" class="span_SignUp"></span>
         
-        <button type="submit" class="btn btn-primary">Enviar</button>
+
+        
+        <button class="btn btn-primary">Enviar</button>
       </form>
     </main>
     <footer>
