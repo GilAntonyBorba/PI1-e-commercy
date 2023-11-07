@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JL TELHAS E FERRAGENS - Criação de conta</title>
-    <link rel="icon" href="src/imagens/JLImagens/JL-Logo.jpg" type="image/jpg">
+    <title>JL TELHAS E FERRAGENS</title>
+    <link rel="icon" href="../src/imagens/JLImagens/JL-Logo.jpg" type="image/jpg">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="src/styles/reset.css">
-    <link rel="stylesheet" href="src/styles/style.css">
-    <link rel="stylesheet" href="src/styles/styleNav.css">
-    <link rel="stylesheet" href="src/styles/styleFooter.css">
-    <link rel="stylesheet" href="src/styles/styleCreateAccount.css">
-
-    <!-- Scripts -->
-    <script src="src/scripts/validaForm.js"></script>
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="stylesheet" href="../src/styles/styleNav.css">
+    <link rel="stylesheet" href="../src/styles/styleSwiperBootstrap.css">
+    <link rel="stylesheet" href="../src/styles/styleFooter.css">
     
 
 </head>
@@ -28,10 +32,10 @@
           <button class="navbar-toggler navbar-toggler-custom order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" ></span>
           </button>
-          <a class="navbar-brand order-2 mx-auto" href="index.html">
-            <img src="src/imagens/JLImagens/LogoWideOriginal.jpg" class="logo" width="173" height="30" alt="LOGO - JL TELHAS E FERRAGENS">
+          <a class="navbar-brand order-2 mx-auto" href="../index.html">
+            <img src="../src/imagens/JLImagens/LogoWideOriginal.jpg" class="logo" width="173" height="30" alt="LOGO - JL TELHAS E FERRAGENS">
           </a>
-          <a class="navbar-brand order-4 active" id="color-picker" aria-current="page" href="createAccount.html">
+          <a class="navbar-brand order-4" id="color-picker" href="../createAccount.html">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon_menu-person" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -45,14 +49,14 @@
           <div class="collapse navbar-collapse order-3" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" id="color-picker" href="index.html">Home</a>
+                  <a class="nav-link" id="color-picker" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="color-picker" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Produtos
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" id="color-picker" href="produtos/churrasqueiras.html">Churrasqueiras</a></li>
+                    <li><a class="dropdown-item active" id="color-picker" aria-current="page" href="#">Churrasqueiras</a></li>
                     <li><a class="dropdown-item" id="color-picker" href="#">Telhas</a></li>
                     <li><a class="dropdown-item" id="color-picker" href="#">Fogões</a></li>
                     <li><a class="dropdown-item" id="color-picker" href="#">Tubos e Conexões</a></li>
@@ -80,73 +84,78 @@
       </nav>
     </header>
     <main>
-      <form name="SignUp" action="agradecimento.html" method="get" id="form-create-account">
-        <h2>Crie uma conta</h2>
-        <div class="form-group">
-          <label for="InputName">Nome</label>
-          <input type="text" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Seu Nome">
-          <span class="span_SignUp"></span>
-        </div>
-        <div class="form-group">
-          <label for="InputEmail">Endereço de email</label>
-          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Seu email">
-          <span class="span_SignUp"></span>
-        </div>
-        <div class="form-group">
-          <label for="InputPassword">Senha</label>
-          <input type="password" class="form-control" id="InputPassword" placeholder="Senha">
-          <span class="span_SignUp"></span>
-        </div>
-        
-        <div>
-          <p></p>
-          <label>Ajude-nos respondendo algumas perguntas básicas</label>
-          <fieldset class="fieldset-form-group">
-            <div class="form-group" id="radioOptions">
-              <p id="pRadio" class="created-legend">Já nos conhecia anteriormente?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="sim" name="conheciaAntes" value="sim">
-                    <label class="form-check-label" for="sim">Sim</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="nao" name="conheciaAntes" value="nao">
-                    <label class="form-check-label" for="nao">Não</label>
-                </div>
-            </div>
-            <div class="div-divider">
-              <hr>
-            </div>
-            <div class="form-group">
-              <p id="pCheck" class="">Por onde nos conheceu?</p>
-              <div class="form-check">
-                <input class="form-check-input"  type="checkbox" id="redessociais" name="conheceu" value="redessociais">
-                <label class="form-check-label" for="redessociais">Redes Sociais</label>
-              </div>
-              <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="loja" name="conheceu" value="loja">
-                  <label class="form-check-label" for="loja">Loja Presencial</label>
-              </div>
-              <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="website" name="conheceu" value="website">
-                  <label class="form-check-label" for="website">Por este Website</label>
-              </div>
-              <div class="form-check">
-                  <input class="form-check-input"  type="checkbox" id="outros" name="conheceu" value="outros">
-                  <label class="form-check-label" for="outros">Outros</label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <span id="RadioError" class="span_SignUp"></span>
-        <span id="checkboxError" class="span_SignUp"></span>
-        
 
-        
-        <button class="btn btn-primary">Enviar</button>
-      </form>
+      <h3 class="h3-centralizado">
+        CHURRASQUEIRAS
+      </h3>
+      <!-- (Churrasqueiras) -->
+
+      <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row;">
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueira-Lisa/Churrasqueira-Lisa1.jpg" alt="Churrasqueira-Lisa" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+            <h5 class="card-title">Churrasqueira Lisa</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueira-Pre-Moldada/Churrasqueira-Pre-Moldada1.png" alt="Churrasqueira-Pre-Moldada" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+          <h5 class="card-title">Churrasqueira Pre-Moldada</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueira-Completa/Churrasqueira-Completa1.jpg" alt="Churrasqueira-Completa" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+          <h5 class="card-title">Churrasqueira Completa</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueira-Completa/Churrasqueira-Completa2.jpg" alt="Churrasqueira-Completa" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+              <h5 class="card-title">Churrasqueira Completa</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueiras-de-botijao/Churrasqueira-de-botijão1.jpg" alt="Churrasqueira-de-botijão" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+          <h5 class="card-title">Churrasqueira de botijão</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="../src/imagens/JLImagens/Products/Churrasqueira/Churrasqueiras-aro-de-carro/Churrasqueira-aro-de-carro.jpg" alt="CChurrasqueira-aro-de-carro" class="bd-placeholder-img card-img-top">
+          <button class="btn-shopping-cart btn-shopping-cart-show"><img src="../src/imagens/Icons/shopping-cart.svg" alt="shopping-cart"></button>
+          <div class="card-body">
+          <h5 class="card-title">Churrasqueira aro de carro</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p>R$ </p><button><a href="#">Comprar</a></button></li>
+          </ul>
+        </div>
+      </div>
+
     </main>
     <footer>
-      <img src="src/imagens/JLImagens/LogoWideOriginal.jpg"  alt="LOGO - JL TELHAS E FERRAGENS">
+      <img src="../src/imagens/JLImagens/LogoWideOriginal.jpg"  alt="LOGO - JL TELHAS E FERRAGENS">
       <p>JL Telhas e Ferragens. - <a href="https://maps.app.goo.gl/gXKQieFqDukeKAd49" target="_blank">Av. Gercina Borges Teixeira, qd 22 Lt 33 Jardim São José - Goiânia</a></p>
       <a href="mailto:contato@technomonte.com.br" target="_blank">borbavazjl@gmail.com</a>
       <a href="tel:062-99296-2895" target="_blank">62 9 9296-2895</a>
@@ -186,6 +195,10 @@
       </div>
       <p>© Copyright 2023 JL TELHAS E FERRAGENS - Todos os direitos reservados</p>
     </footer>
+
+    <script src="../src/scripts/CarouselSwiper.js"></script>
+    <script src="../src/scripts/Swiper.js"></script>
+    <script src="../src/scripts/ShoppingCart.js"></script>
 
 
     <!-- Bootstrap -->
