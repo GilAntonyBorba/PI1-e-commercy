@@ -80,7 +80,7 @@
       </nav>
     </header>
     <main>
-        <h1 class="title"></h1>
+        <h1>Cadastro realizado com sucesso!</h1>
     </main>
     <footer>
       <img src="src/imagens/JLImagens/LogoWideOriginal.jpg"  alt="LOGO - JL TELHAS E FERRAGENS">
@@ -123,16 +123,6 @@
       </div>
       <p>© Copyright 2023 JL TELHAS E FERRAGENS - Todos os direitos reservados</p>
     </footer>
-    <script>
-      const getUser = () =>{
-        const user = JSON.parse(localStorage.getItem("@User"))
-        const h1El = document.querySelector(".title")
-        if(!user){
-          h1El.textContent = `Cadastro realizado com sucesso!`
-        }
-        h1El.textContent = `${user.nome} cadastro realizado com sucesso!`
-      }
-      getUser()
-    </script>
+
   </body>
 </html>
